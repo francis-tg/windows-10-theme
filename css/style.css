@@ -78,6 +78,33 @@ body {
   background-color: rgba(75, 75, 75, 0.5882352941);
   cursor: pointer;
 }
+.windows .start-menu {
+  position: absolute;
+  bottom: 50px;
+  height: 550px;
+  width: 550px;
+  background-color: #3b3b3b;
+  z-index: 100;
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
+}
+.windows .start-menu .recent-app {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 10px;
+  gap: 10px;
+}
+.windows .start-menu .recent-app .item {
+  background-color: rgba(75, 75, 75, 0.5882352941);
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+}
 
 .windows-pan {
   position: absolute;
