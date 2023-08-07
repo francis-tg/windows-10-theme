@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url(../img/bg.jpg);
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.windows .windows-bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  background-color: rgba(207, 220, 255, 0.5764705882);
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+.windows .windows-bottom-bar .left-items {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.windows .windows-bottom-bar .left-items .item {
+  padding: 10px;
+}
+.windows .windows-bottom-bar .left-items .item:hover {
+  background-color: rgba(173, 173, 173, 0.3411764706);
+}
+.windows .windows-bottom-bar .left-items #windows-logo, .windows .windows-bottom-bar .left-items #edge-icon {
+  width: 25px;
+  height: 25px;
+}
+.windows .windows-bottom-bar .left-items #windows-logo-color {
+  fill: white;
+  transition: fill 0.2s ease-in-out;
+}
+.windows .windows-bottom-bar .left-items .item:has(#windows-logo):hover > #windows-logo-color {
+  fill: #03A9F4;
+  cursor: pointer;
+  transition: fill 0.2s ease-in-out;
+}
+.windows .windows-bottom-bar .right-items {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  color: #242424;
+}
+
+.windows .desktop {
+  position: relative;
+  padding: 10px;
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  width: 50px;
+  height: 50px;
+  align-items: center;
+}
+.windows .desktop .item {
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+}
+.windows .desktop .item:hover {
+  background-color: rgba(75, 75, 75, 0.5882352941);
+  cursor: pointer;
+}
+
+.windows-pan {
+  position: absolute;
+  width: 50%;
+  top: 50px;
+  left: 200px;
+  background-color: #242424;
+  height: 720px;
+  display: none;
+}
+.windows-pan.open {
+  display: block;
+}
+.windows-pan .action-btns {
+  display: flex;
+  justify-content: flex-end;
+  align-items: end;
+  color: white;
+}
+.windows-pan .action-btns i {
+  padding: 10px 15px;
+  cursor: pointer;
+}
+.windows-pan .action-btns i:hover {
+  background-color: rgba(184, 184, 184, 0.3411764706);
+}
+.windows-pan .action-btns i.fa-times:hover {
+  background-color: red;
+}
+.windows-pan iframe {
+  width: 100%;
+  height: 720px;
+}
+
+/*# sourceMappingURL=style.css.map */
