@@ -69,6 +69,7 @@ body {
   flex-direction: column;
   color: white;
   text-align: center;
+  z-index: -100;
 }
 .windows .desktop .item:hover {
   background-color: rgba(75, 75, 75, 0.5882352941);
@@ -80,7 +81,7 @@ body {
   height: 550px;
   width: 550px;
   background-color: #3b3b3b;
-  z-index: 100;
+  z-index: 200;
   display: grid;
   grid-template-columns: repeat(2, 3fr);
   display: none;
@@ -135,9 +136,11 @@ body {
   background-color: #242424;
   height: 720px;
   display: none;
+  animation: fadeIn 0.5s ease-in-out;
 }
 .windows-pan.open {
   display: block;
+  animation: fadeIn 0.5s ease-in-out;
 }
 .windows-pan .action-btns {
   display: flex;
@@ -164,6 +167,23 @@ body {
   fill: #03a9f4;
   cursor: pointer;
   transition: fill 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

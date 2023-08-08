@@ -6,6 +6,7 @@ function openPan(url) {
 	toRms.forEach((toRm) => {
 		toRm.querySelector(".fa-times").addEventListener("click", (e) => {
 			e.preventDefault();
+			toRm.classList.add("fadeOut");
 			toRm.remove();
 		});
 		/* toRm.querySelector(".fa-square").addEventListener("click", (e) => {
@@ -27,6 +28,11 @@ function openPan(url) {
             toRm.removeAttribute("full-screen");
         }) */
 	});
+	document.querySelector(".start-menu").classList.add("fadeOut");
+	setTimeout(() => {
+		document.querySelector(".start-menu").classList.remove("open");
+		document.querySelector(".start-menu").classList.remove("fadeOut");
+	}, 3000);
 }
 
 function openLink(url) {

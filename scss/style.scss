@@ -68,6 +68,7 @@ body {
 			flex-direction: column;
 			color: white;
 			text-align: center;
+            z-index: -100;
 			&:hover {
 				background-color: #4b4b4b96;
 				cursor: pointer;
@@ -80,7 +81,7 @@ body {
 		height: 550px;
 		width: 550px;
 		background-color: #3b3b3b;
-		z-index: 100;
+		z-index: 200;
 		display: grid;
 		grid-template-columns: repeat(2, 3fr);
 		display: none;
@@ -136,8 +137,10 @@ body {
 	background-color: #242424;
 	height: 720px;
 	display: none;
+    animation: fadeIn .5s ease-in-out;
 	&.open {
 		display: block;
+        animation: fadeIn .5s ease-in-out;
 	}
 	.action-btns {
 		display: flex;
@@ -166,4 +169,20 @@ body {
 	fill: #03a9f4;
 	cursor: pointer;
 	transition: fill 0.2s ease-in-out;
+}
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes fadeOut{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
 }
