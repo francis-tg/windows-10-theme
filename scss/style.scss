@@ -1,149 +1,169 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
-body{
-    background: url(../img/bg.jpg);
-    background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+body {
+	background: url(../img/bg.jpg);
+	background-size: cover;
+	background-position: top;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
-.windows .windows-bottom-bar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10px;
-    background-color: #cfdcff93;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    .left-items{
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 10px;
-        .item{
-            padding: 10px;
-            &:hover{
-                background-color: #adadad57;
-            }
-        }
-        #windows-logo,#edge-icon{
-            width: 25px;
-            height: 25px;
-        }
-        #windows-logo-color{
-            fill: white;
-            transition: fill .2s ease-in-out;
-            
-        }
-        .item:has(#windows-logo){
-            &:hover>#windows-logo-color{
-                fill: #03A9F4;
-                cursor: pointer;
-                transition: fill .2s ease-in-out;
-            }
-        }
-    }
-    .right-items{
-        display: flex;
-        gap: 10px;
-        align-items: center;
-        justify-content: center;
-        color: #242424;
-    }
+.windows .windows-bottom-bar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 10px;
+	background-color: #cfdcff93;
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	.left-items {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 10px;
+		.item {
+			padding: 10px;
+			&:hover {
+				background-color: #adadad57;
+			}
+		}
+	}
+	#windows-logo,
+	#edge-icon {
+		width: 25px;
+		height: 25px;
+	}
+	#windows-logo-color {
+		fill: white;
+		transition: fill 0.2s ease-in-out;
+	}
+	.right-items {
+		display: flex;
+		gap: 10px;
+		align-items: center;
+		justify-content: center;
+		color: #242424;
+	}
 }
 
-.windows{
-    .desktop{
-        position: relative;
-        padding:  10px;
-        display: grid;
-        grid-template-rows: repeat(6,1fr);
-        width: 50px;
-        height: 50px;
-        align-items: center;
+.windows {
+	.desktop {
+		position: relative;
+		padding: 10px;
+		display: grid;
+		grid-template-rows: repeat(6, 1fr);
+		width: 50px;
+		height: 50px;
+		align-items: center;
 
-        .item{
-            padding: 10px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            color: white;
-            text-align: center;
-            &:hover{
-                background-color: #4b4b4b96;
-                cursor: pointer;
-            }
-        }
-        
-    }
-    .start-menu{
-    position: absolute;
-    bottom: 50px;
-    height: 550px;
-    width: 550px;
-    background-color: #3b3b3b;
-    z-index: 100;
-    display: grid;
-    grid-template-columns: repeat(3,3fr);
-    .recent-app{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        padding: 10px;
-        gap: 10px;
-        .item{
-            background-color: #4b4b4b96;
-            width: 100%;
-            height: 100px;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            cursor: pointer;
-        }
-    }
+		.item {
+			padding: 10px;
+			border-radius: 10px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			color: white;
+			text-align: center;
+			&:hover {
+				background-color: #4b4b4b96;
+				cursor: pointer;
+			}
+		}
+	}
+	.start-menu {
+		position: absolute;
+		bottom: 50px;
+		height: 550px;
+		width: 550px;
+		background-color: #3b3b3b;
+		z-index: 100;
+		display: grid;
+		grid-template-columns: repeat(2, 3fr);
+		display: none;
+		transition: display 0.5s ease-in-out;
+		z-index: -100;
+
+		&.open {
+			display: grid;
+			transition: display 0.5s ease-in-out;
+		}
+		.recent-app {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			padding: 10px;
+			gap: 10px;
+			width: 100%;
+			.item {
+				background-color: #69696996;
+				width: 100%;
+				height: 100px;
+				padding: 10px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+				cursor: pointer;
+				&:hover {
+					border: 2px solid white;
+				}
+			}
+		}
+		.left-menu {
+			display: flex;
+			justify-content: flex-end;
+			flex-direction: column;
+			align-items: start;
+			gap: 10px;
+			.item {
+				padding: 15px;
+				color: white;
+				&:hover {
+					background-color: #838383be;
+				}
+			}
+		}
+	}
 }
-}
-.windows-pan{
-    position: absolute;
-    width: 50%;
-    top: 50px;
-    left: 200px;
-    background-color: #242424;
-    height: 720px;
-    display: none;
-    &.open{
-        display: block;
-    }
-    .action-btns{
-        display:flex;
-        justify-content: flex-end;
-        align-items: end;
-        color: white;
-        
-        i{
-            padding: 10px 15px;
-            cursor: pointer;
-            &:hover{
-                background-color: #b8b8b857;
-            }
-            &.fa-times:hover{
-                background-color: red;
-            }
-           
-        }
-        
-    }
-    iframe{
-        width: 100%;
-        height: 720px;
-        
-    }
+.windows-pan {
+	position: absolute;
+	width: 50%;
+	top: 50px;
+	left: 200px;
+	background-color: #242424;
+	height: 720px;
+	display: none;
+	&.open {
+		display: block;
+	}
+	.action-btns {
+		display: flex;
+		justify-content: flex-end;
+		align-items: end;
+		color: white;
+
+		i {
+			padding: 10px 15px;
+			cursor: pointer;
+			&:hover {
+				background-color: #b8b8b857;
+			}
+			&.fa-times:hover {
+				background-color: red;
+			}
+		}
+	}
+	iframe {
+		width: 100%;
+		height: 720px;
+	}
 }
 
+.logoHover {
+	fill: #03a9f4;
+	cursor: pointer;
+	transition: fill 0.2s ease-in-out;
+}

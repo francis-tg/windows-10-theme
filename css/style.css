@@ -34,17 +34,13 @@ body {
 .windows .windows-bottom-bar .left-items .item:hover {
   background-color: rgba(173, 173, 173, 0.3411764706);
 }
-.windows .windows-bottom-bar .left-items #windows-logo, .windows .windows-bottom-bar .left-items #edge-icon {
+.windows .windows-bottom-bar #windows-logo,
+.windows .windows-bottom-bar #edge-icon {
   width: 25px;
   height: 25px;
 }
-.windows .windows-bottom-bar .left-items #windows-logo-color {
+.windows .windows-bottom-bar #windows-logo-color {
   fill: white;
-  transition: fill 0.2s ease-in-out;
-}
-.windows .windows-bottom-bar .left-items .item:has(#windows-logo):hover > #windows-logo-color {
-  fill: #03A9F4;
-  cursor: pointer;
   transition: fill 0.2s ease-in-out;
 }
 .windows .windows-bottom-bar .right-items {
@@ -86,16 +82,24 @@ body {
   background-color: #3b3b3b;
   z-index: 100;
   display: grid;
-  grid-template-columns: repeat(3, 3fr);
+  grid-template-columns: repeat(2, 3fr);
+  display: none;
+  transition: display 0.5s ease-in-out;
+  z-index: -100;
+}
+.windows .start-menu.open {
+  display: grid;
+  transition: display 0.5s ease-in-out;
 }
 .windows .start-menu .recent-app {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding: 10px;
   gap: 10px;
+  width: 100%;
 }
 .windows .start-menu .recent-app .item {
-  background-color: rgba(75, 75, 75, 0.5882352941);
+  background-color: rgba(105, 105, 105, 0.5882352941);
   width: 100%;
   height: 100px;
   padding: 10px;
@@ -104,6 +108,23 @@ body {
   justify-content: center;
   flex-direction: column;
   cursor: pointer;
+}
+.windows .start-menu .recent-app .item:hover {
+  border: 2px solid white;
+}
+.windows .start-menu .left-menu {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+}
+.windows .start-menu .left-menu .item {
+  padding: 15px;
+  color: white;
+}
+.windows .start-menu .left-menu .item:hover {
+  background-color: rgba(131, 131, 131, 0.7450980392);
 }
 
 .windows-pan {
@@ -137,6 +158,12 @@ body {
 .windows-pan iframe {
   width: 100%;
   height: 720px;
+}
+
+.logoHover {
+  fill: #03a9f4;
+  cursor: pointer;
+  transition: fill 0.2s ease-in-out;
 }
 
 /*# sourceMappingURL=style.css.map */
